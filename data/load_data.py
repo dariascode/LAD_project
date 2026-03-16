@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import pandas as pd
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def load_data():
+    url = "https://raw.githubusercontent.com/dariascode/LAD_project/refs/heads/main/cars_cleaned_dataset.csv"
+
+    df = pd.read_csv(url)
+
+    print("Dataset loaded successfully")
+    print("Shape:", df.shape)
+
+    return df
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    df = load_data()
+    print(df.head())
