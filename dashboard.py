@@ -137,3 +137,22 @@ try:
     st.pyplot(fig)
 except Exception as e:
     st.error(f"Cannot generate chart with these parameters: {e}")
+
+# =====================
+# TAB 4 DATASET
+# =====================
+
+with tab4:
+
+    st.subheader("Filtered Dataset")
+
+    st.dataframe(filtered_df)
+
+    csv = filtered_df.to_csv(index=False).encode("utf-8")
+
+    st.download_button(
+        "Download filtered data",
+        csv,
+        "filtered_cars.csv",
+        "text/csv"
+    )
